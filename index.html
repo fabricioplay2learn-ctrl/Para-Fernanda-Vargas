@@ -45,13 +45,13 @@
     .burger {
       position: absolute;
       font-size: 42px;
-      animation: float 12s linear infinite;
+      animation: float 22s linear infinite;
       opacity: 0.25;
     }
 
     @keyframes float {
-      from { transform: translateY(125vh) rotate(0deg); }
-      to { transform: translateY(-150vh) rotate(360deg); }
+      from { transform: translateY(110vh) rotate(0deg); }
+      to { transform: translateY(-120vh) rotate(360deg); }
     }
 
     header {
@@ -168,7 +168,6 @@ body.dark .story-box {
       padding: 1.2rem;
       border-radius: 16px;
       margin-bottom: 1.2rem;
-      text-align: center;
     }
 
     body.dark .question {
@@ -188,7 +187,7 @@ body.dark .story-box {
     }
 
     textarea {
-      margin: 0 auto 0.6rem; /* centra horizontalmente */
+      width: 100%;
       border-radius: 12px;
       border: 1px solid #ccc;
       padding: 0.7rem;
@@ -241,10 +240,6 @@ body.dark .story-box {
 <body>
 
 <div class="burgers">
-  <div class="burger" style="left:5%;">🍔</div>
-  <div class="burger" style="left:25%; animation-duration:25s;">🍟</div>
-  <div class="burger" style="left:50%; animation-duration:20s;">🍔</div>
-  <div class="burger" style="left:75%; animation-duration:28s;">🥤</div>
   <div class="burger" style="left:5%;">🍔</div>
   <div class="burger" style="left:12%; animation-duration:10s;">🍟</div>
   <div class="burger" style="left:20%; animation-duration:14s;">🍔</div>
