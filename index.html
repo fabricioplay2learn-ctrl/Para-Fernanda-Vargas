@@ -196,16 +196,17 @@
 <button class="toggle" onclick="toggleDark()">🌙 Modo nocturno</button>
 
 <header>
-  <h1>🍔 Una historia curiosamente deliciosa ❤️</h1>
-  <p>
-    Todo comenzó con una hamburguesa, un estado de Facebook y una coincidencia
-    tan perfecta que parecía planeada por el universo ✨  
-    <br><br>
-    Fernanda, amante de la buena comida, las películas (especialmente de terror 👻),
-    estratega y segura de lo que quiere.  
-    Fabricio, ingeniero de sistemas, curioso por descubrir todo lo bonito que hay en ti 💻❤️
-  </p>
-</header>
+    <h1>🍔 Una historia curiosamente deliciosa ❤️</h1>
+    <p>
+      Todo empezó con un estado en Facebook… Ella comiendo con papá en Burger King 🍟  
+      y casi a la misma hora, casi en el mismo lugar, incluso en el mismo asiento,  
+      con una vista privilegiada hacía el Cristo de la Concordia, observándolo todo.  
+      <br><br>
+      Fernanda, estudiante de medicina, una mujer de buen diente y excelentes gustos 🍔🎬  
+      y Fabricio, un humilde espíritu aventurero, curioso por conocerte más sobre ella 💻❤️.  
+      Entre mensajes, risas y charlas divertidas, algo bonito empezó a crecer.
+    </p>
+  </header>
 
 <main class="container">
   <div class="card">
@@ -219,63 +220,63 @@
     </div>
 
     <div class="question">
-      <div class="question-title">🎬 ¿Prefieres películas o series?</div>
-      <div class="question-sub">¿Cuál te atrapa más y por qué?</div>
+      <div class="question-title">🎬 ¿Cuál te atrapa más y por qué?</div>
+      <div class="question-sub">Me comentaste que eres más de películas</div>
       <textarea></textarea>
-      <textarea class="small" placeholder="¿Por qué?"></textarea>
+      <textarea class="small" placeholder="¿Por qué esa película?"></textarea>
     </div>
 
     <div class="question">
-      <div class="question-title">👻 Película de terror favorita</div>
-      <div class="question-sub">¿Cuántas veces la verías sin miedo?</div>
+      <div class="question-title">👻 ¿Película de terror favorita</div>
+      <div class="question-sub">Y puedes verla sin miedo?</div>
       <textarea></textarea>
       <textarea class="small" placeholder="¿Cuántas veces más?"></textarea>
     </div>
 
     <div class="question">
-      <div class="question-title">✈️ ¿Te gusta viajar?</div>
-      <div class="question-sub">¿A dónde irías ahora mismo?</div>
+      <div class="question-title">✈️ ¿Te gusta viajar mucho?</div>
+      <div class="question-sub">Y, ¿a dónde irías ahora mismo?</div>
       <textarea></textarea>
-      <textarea class="small" placeholder="Destino soñado…"></textarea>
+      <textarea class="small" placeholder="Tienes algún destino soñado…?"></textarea>
     </div>
 
     <div class="question">
       <div class="question-title">🧠 ¿Te consideras estratega?</div>
-      <div class="question-sub">¿En qué situaciones lo notas más?</div>
+      <div class="question-sub">Cómo sabras que ya me diste miedo ¿En qué situaciones lo notas más?</div>
       <textarea></textarea>
-      <textarea class="small" placeholder="Cuéntame un ejemplo"></textarea>
+      <textarea class="small" placeholder="Cuéntame un ejemplo para estar mentalmente preparado jajaja"></textarea>
     </div>
 
     <div class="question">
       <div class="question-title">❤️ ¿Qué te atrae de una persona?</div>
-      <div class="question-sub">¿Y qué te aleja inmediatamente?</div>
+      <div class="question-sub">¿Y qué es lo que te aleja inmediatamente?</div>
       <textarea></textarea>
-      <textarea class="small" placeholder="Lo que no te gusta…"></textarea>
+      <textarea class="small" placeholder="Lo que no te gusta… y si tienes la paciencia para que todo mejore"></textarea>
     </div>
 
     <div class="question">
       <div class="question-title">😳 ¿Qué te llamó la atención de mí?</div>
-      <div class="question-sub">Sé sincera… prometo sonreír</div>
+      <div class="question-sub">Sé sincera… prometo sonreír jajaja</div>
       <textarea></textarea>
-      <textarea class="small" placeholder="Un detalle…"></textarea>
+      <textarea class="small" placeholder="Un detalle… quizá algo lindo que consideras, cómo el 'detalle'."></textarea>
     </div>
 
     <div class="question">
-      <div class="question-title">✨ Algo curioso sobre ti</div>
-      <div class="question-sub">Algo que pocos saben</div>
+      <div class="question-title">✨ Cuéntame algo muy interesante, curioso o divertido sobre ti</div>
+      <div class="question-sub">Algo que pocos saben (Pero, si mataste a alguien prometo no delatarte)</div>
       <textarea></textarea>
-      <textarea class="small" placeholder="Dato curioso…"></textarea>
+      <textarea class="small" placeholder="Aquí puedes escribir lo que tú quieras… 💕"></textarea>
     </div>
 
   </div>
 
   <button class="send" onclick="sendMessenger()">
-    📩 ¿Imprimimos y compartimos esta historia? ❤️
+    📩 ¿Imprimimos y enviamos todo esto por Messenger? 😏❤️
   </button>
 </main>
 
 <footer>
-  Hecho con mucho cariño por Fabricio 💻❤️🍔
+  Hecho con mucho cariño y con poquito de café, por Fabricio 💻❤️🍔
 </footer>
 
 <script>
@@ -285,10 +286,11 @@
 
   function sendMessenger() {
     const ok = confirm(
-      "😳 ¿Te gustaría guardar esta historia como recuerdo?\n\nSe abrirá la opción para imprimir o guardar en PDF ❤️"
+      "😳 ¿Estás segura de enviar todas tus respuestas por Messenger?\n\nPrometo leerlas con una sonrisa 🍔❤️"
     );
 
     if (ok) {
+      alert("📨 Perfecto… ahora solo falta que me las envíes 😉");
       setTimeout(() => {
         window.print();
       }, 300);
