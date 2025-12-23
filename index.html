@@ -5,6 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Fabricio & Fernanda 🍔❤️</title>
 
+  <!-- Fuente Nunito -->
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600;700&display=swap" rel="stylesheet">
+
   <style>
     :root {
       --bg-light: #fff8f0;
@@ -14,11 +17,12 @@
       --card-light: #ffffff;
       --card-dark: #1f1f1f;
       --accent: #ff9800;
+      --soft: #ffefd6;
     }
 
     body {
       margin: 0;
-      font-family: 'Segoe UI', sans-serif;
+      font-family: 'Nunito', sans-serif;
       background: var(--bg-light);
       color: var(--text-light);
       transition: background 0.4s, color 0.4s;
@@ -30,7 +34,7 @@
       color: var(--text-dark);
     }
 
-    /* Fondo animado hamburguesas */
+    /* Fondo hamburguesas */
     .burgers {
       position: fixed;
       inset: 0;
@@ -40,34 +44,30 @@
 
     .burger {
       position: absolute;
-      font-size: 40px;
-      animation: float 20s linear infinite;
+      font-size: 42px;
+      animation: float 22s linear infinite;
       opacity: 0.25;
     }
 
     @keyframes float {
-      from {
-        transform: translateY(110vh) rotate(0deg);
-      }
-      to {
-        transform: translateY(-120vh) rotate(360deg);
-      }
+      from { transform: translateY(110vh) rotate(0deg); }
+      to { transform: translateY(-120vh) rotate(360deg); }
     }
 
     header {
       text-align: center;
-      padding: 2rem 1rem;
+      padding: 2.5rem 1rem;
     }
 
     header h1 {
-      font-size: clamp(1.8rem, 5vw, 3rem);
+      font-size: clamp(2rem, 5vw, 3.2rem);
     }
 
     header p {
-      max-width: 700px;
+      max-width: 760px;
       margin: auto;
-      font-size: 1.1rem;
-      line-height: 1.6;
+      font-size: 1.15rem;
+      line-height: 1.7;
     }
 
     .toggle {
@@ -77,10 +77,11 @@
       background: var(--accent);
       color: #fff;
       border: none;
-      border-radius: 25px;
-      padding: 10px 16px;
+      border-radius: 30px;
+      padding: 10px 18px;
       cursor: pointer;
-      font-weight: bold;
+      font-weight: 700;
+      z-index: 10;
     }
 
     .container {
@@ -91,10 +92,10 @@
 
     .card {
       background: var(--card-light);
-      border-radius: 16px;
-      padding: 1.5rem;
-      margin-bottom: 1.5rem;
-      box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+      border-radius: 20px;
+      padding: 2rem;
+      margin-bottom: 2rem;
+      box-shadow: 0 12px 30px rgba(0,0,0,0.12);
       transition: background 0.4s;
     }
 
@@ -105,37 +106,58 @@
     .card h2 {
       margin-top: 0;
       color: var(--accent);
+      font-size: 1.7rem;
     }
 
+    /* Preguntas bonitas */
     .question {
-      margin-bottom: 1rem;
+      background: var(--soft);
+      padding: 1.2rem;
+      border-radius: 16px;
+      margin-bottom: 1.2rem;
     }
 
-    .question label {
-      font-weight: bold;
-      display: block;
-      margin-bottom: 0.3rem;
+    body.dark .question {
+      background: #2a2a2a;
     }
 
-    .question textarea {
+    .question-title {
+      font-weight: 700;
+      font-size: 1.05rem;
+      margin-bottom: 0.4rem;
+    }
+
+    .question-sub {
+      font-size: 0.95rem;
+      opacity: 0.8;
+      margin-bottom: 0.5rem;
+    }
+
+    textarea {
       width: 100%;
-      min-height: 60px;
-      border-radius: 10px;
+      border-radius: 12px;
       border: 1px solid #ccc;
-      padding: 0.6rem;
+      padding: 0.7rem;
+      font-family: 'Nunito', sans-serif;
       font-size: 1rem;
       resize: vertical;
+      margin-bottom: 0.5rem;
+    }
+
+    textarea.small {
+      min-height: 40px;
+      font-size: 0.95rem;
     }
 
     button.send {
       width: 100%;
-      padding: 1rem;
-      font-size: 1.1rem;
+      padding: 1.2rem;
+      font-size: 1.15rem;
       border: none;
-      border-radius: 14px;
+      border-radius: 18px;
       background: var(--accent);
       color: white;
-      font-weight: bold;
+      font-weight: 700;
       cursor: pointer;
       margin-bottom: 2rem;
     }
@@ -143,113 +165,136 @@
     footer {
       text-align: center;
       padding-bottom: 2rem;
-      font-size: 0.9rem;
+      font-size: 0.95rem;
       opacity: 0.8;
+    }
+
+    @media print {
+      .toggle, .send {
+        display: none;
+      }
+      body {
+        background: white;
+        color: black;
+      }
+      .card {
+        box-shadow: none;
+      }
     }
   </style>
 </head>
 
 <body>
 
-  <!-- Fondo hamburguesas -->
-  <div class="burgers">
-    <div class="burger" style="left:5%; animation-duration:18s;">🍔</div>
-    <div class="burger" style="left:20%; animation-duration:22s;">🍟</div>
-    <div class="burger" style="left:40%; animation-duration:25s;">🍔</div>
-    <div class="burger" style="left:60%; animation-duration:20s;">🥤</div>
-    <div class="burger" style="left:80%; animation-duration:23s;">🍔</div>
-  </div>
+<div class="burgers">
+  <div class="burger" style="left:5%;">🍔</div>
+  <div class="burger" style="left:25%; animation-duration:25s;">🍟</div>
+  <div class="burger" style="left:50%; animation-duration:20s;">🍔</div>
+  <div class="burger" style="left:75%; animation-duration:28s;">🥤</div>
+</div>
 
-  <button class="toggle" onclick="toggleDark()">🌙 Modo nocturno</button>
+<button class="toggle" onclick="toggleDark()">🌙 Modo nocturno</button>
 
-  <header>
-    <h1>🍔 Una historia curiosamente deliciosa ❤️</h1>
-    <p>
-      Todo comenzó en Facebook… Un simple estado comiendo con papá en Burger King 🍟  
-      y casi a la misma hora, casi en el mismo lugar, casi en el mismo asiento,  
-      con el Cristo de la Concordia observándolo todo desde el fondo 🙏.  
-      <br><br>
-      Fernanda, estudiante de medicina, de buen diente y excelente gusto 🍔🎬  
-      y Fabricio, un humilde ingeniero de sistemas, curioso por conocerte más 💻❤️.  
-      Entre mensajes, risas y charlas divertidas, algo bonito empezó a crecer.
-    </p>
-  </header>
+<header>
+  <h1>🍔 Una historia curiosamente deliciosa ❤️</h1>
+  <p>
+    Todo comenzó con una hamburguesa, un estado de Facebook y una coincidencia
+    tan perfecta que parecía planeada por el universo ✨  
+    <br><br>
+    Fernanda, amante de la buena comida, las películas (especialmente de terror 👻),
+    estratega y segura de lo que quiere.  
+    Fabricio, ingeniero de sistemas, curioso por descubrir todo lo bonito que hay en ti 💻❤️
+  </p>
+</header>
 
-  <main class="container">
-    <div class="card">
-      <h2>💬 Cosas que me encantaría saber de ti</h2>
+<main class="container">
+  <div class="card">
+    <h2>💬 Preguntas que nacen de la curiosidad</h2>
 
-      <!-- Preguntas -->
-      <div class="question"><label>1️⃣ ¿Cuál es tu comida favorita y por qué?</label><textarea></textarea></div>
-      <div class="question"><label>2️⃣ ¿Burger King o McDonald's? 🍔😏</label><textarea></textarea></div>
-      <div class="question"><label>3️⃣ Película de terror favorita 👻</label><textarea></textarea></div>
-      <div class="question"><label>4️⃣ ¿Prefieres viajar sola o acompañada?</label><textarea></textarea></div>
-      <div class="question"><label>5️⃣ ¿Qué país sueñas conocer?</label><textarea></textarea></div>
-      <div class="question"><label>6️⃣ ¿Qué te hace reír sin esfuerzo?</label><textarea></textarea></div>
-      <div class="question"><label>7️⃣ ¿Eres más estratégica o impulsiva?</label><textarea></textarea></div>
-      <div class="question"><label>8️⃣ ¿Una película que podrías ver mil veces?</label><textarea></textarea></div>
-      <div class="question"><label>9️⃣ ¿Qué valoras más en una persona?</label><textarea></textarea></div>
-      <div class="question"><label>🔟 ¿Qué te atrajo de mí? 😳</label><textarea></textarea></div>
-
-      <div class="question"><label>1️⃣1️⃣ ¿Qué te enamora de la vida?</label><textarea></textarea></div>
-      <div class="question"><label>1️⃣2️⃣ ¿Eres de dulces o salados?</label><textarea></textarea></div>
-      <div class="question"><label>1️⃣3️⃣ ¿Qué superpoder te gustaría tener?</label><textarea></textarea></div>
-      <div class="question"><label>1️⃣4️⃣ ¿Plan perfecto para un día libre?</label><textarea></textarea></div>
-      <div class="question"><label>1️⃣5️⃣ ¿Algo que pocos saben de ti?</label><textarea></textarea></div>
-      <div class="question"><label>1️⃣6️⃣ ¿Qué te hace sentir segura?</label><textarea></textarea></div>
-      <div class="question"><label>1️⃣7️⃣ ¿Cuál es tu mayor sueño?</label><textarea></textarea></div>
-      <div class="question"><label>1️⃣8️⃣ ¿Qué te conquista primero?</label><textarea></textarea></div>
-      <div class="question"><label>1️⃣9️⃣ ¿Un miedo curioso que tengas?</label><textarea></textarea></div>
-      <div class="question"><label>2️⃣0️⃣ ¿Qué esperas de alguien que quiere conocerte de verdad?</label><textarea></textarea></div>
-
-      <div class="question">
-        <label>✨ Cuéntame algo muy interesante, curioso o divertido sobre ti ✨</label>
-        <textarea placeholder="Aquí puedes escribir lo que tú quieras… 💕"></textarea>
-      </div>
+    <div class="question">
+      <div class="question-title">🍔 ¿Cuál es tu comida favorita?</div>
+      <div class="question-sub">¿Por qué te gusta tanto?</div>
+      <textarea></textarea>
+      <textarea class="small" placeholder="¿Por qué?"></textarea>
     </div>
 
-    <button class="send" onclick="sendMessenger()">
-      📩 ¿Enviamos todo esto por Messenger? 😏❤️
-    </button>
-  </main>
+    <div class="question">
+      <div class="question-title">🎬 ¿Prefieres películas o series?</div>
+      <div class="question-sub">¿Cuál te atrapa más y por qué?</div>
+      <textarea></textarea>
+      <textarea class="small" placeholder="¿Por qué?"></textarea>
+    </div>
 
-  <footer>
-    Hecho con cariño por Fabricio 💻❤️🍔
-  </footer>
+    <div class="question">
+      <div class="question-title">👻 Película de terror favorita</div>
+      <div class="question-sub">¿Cuántas veces la verías sin miedo?</div>
+      <textarea></textarea>
+      <textarea class="small" placeholder="¿Cuántas veces más?"></textarea>
+    </div>
 
-  <script>
-    function toggleDark() {
-      document.body.classList.toggle('dark');
-    }
+    <div class="question">
+      <div class="question-title">✈️ ¿Te gusta viajar?</div>
+      <div class="question-sub">¿A dónde irías ahora mismo?</div>
+      <textarea></textarea>
+      <textarea class="small" placeholder="Destino soñado…"></textarea>
+    </div>
 
-    function sendMessenger() {
-      const ok = confirm(
-        "😳 ¿Estás segura de enviar todas tus respuestas por Messenger?\n\nPrometo leerlas con una sonrisa 🍔❤️"
-      );
-      if (ok) {
-        alert("📨 Perfecto… ahora solo falta que me las envíes 😉");
-      }
-    }
-  </script>
-  <script>
+    <div class="question">
+      <div class="question-title">🧠 ¿Te consideras estratega?</div>
+      <div class="question-sub">¿En qué situaciones lo notas más?</div>
+      <textarea></textarea>
+      <textarea class="small" placeholder="Cuéntame un ejemplo"></textarea>
+    </div>
+
+    <div class="question">
+      <div class="question-title">❤️ ¿Qué te atrae de una persona?</div>
+      <div class="question-sub">¿Y qué te aleja inmediatamente?</div>
+      <textarea></textarea>
+      <textarea class="small" placeholder="Lo que no te gusta…"></textarea>
+    </div>
+
+    <div class="question">
+      <div class="question-title">😳 ¿Qué te llamó la atención de mí?</div>
+      <div class="question-sub">Sé sincera… prometo sonreír</div>
+      <textarea></textarea>
+      <textarea class="small" placeholder="Un detalle…"></textarea>
+    </div>
+
+    <div class="question">
+      <div class="question-title">✨ Algo curioso sobre ti</div>
+      <div class="question-sub">Algo que pocos saben</div>
+      <textarea></textarea>
+      <textarea class="small" placeholder="Dato curioso…"></textarea>
+    </div>
+
+  </div>
+
+  <button class="send" onclick="sendMessenger()">
+    📩 ¿Imprimimos y compartimos esta historia? ❤️
+  </button>
+</main>
+
+<footer>
+  Hecho con mucho cariño por Fabricio 💻❤️🍔
+</footer>
+
+<script>
   function toggleDark() {
     document.body.classList.toggle('dark');
   }
 
   function sendMessenger() {
     const ok = confirm(
-      "😳 ¿Estás segura de enviar todas tus respuestas por Messenger?\n\n💡 También podrás imprimir esta historia para guardarla como recuerdo 🍔❤️"
+      "😳 ¿Te gustaría guardar esta historia como recuerdo?\n\nSe abrirá la opción para imprimir o guardar en PDF ❤️"
     );
 
     if (ok) {
-      // Pequeño delay para que el navegador no bloquee la acción
       setTimeout(() => {
         window.print();
       }, 300);
     }
   }
 </script>
-
 
 </body>
 </html>
