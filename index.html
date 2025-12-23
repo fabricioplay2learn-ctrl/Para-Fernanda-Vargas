@@ -1,46 +1,236 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Para Fernanda Vargas</title>
-  <meta name="description" content="Proyecto Para Fernanda Vargas" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Fabricio & Fernanda 🍔❤️</title>
+
   <style>
-    /* estilos básicos */
-    :root{--bg:#f9f9f9;--card:#ffffff;--text:#111;--muted:#666}
-    body{font-family:system-ui, Arial, sans-serif;line-height:1.6;margin:0;padding:2rem;background:var(--bg);color:var(--text)}
-    header{max-width:900px;margin:0 auto 1rem;text-align:center}
-    .container{max-width:900px;margin:0 auto;padding:1.25rem;background:var(--card);border-radius:8px;box-shadow:0 2px 8px rgba(0,0,0,.05)}
-    h1{margin:0 0 .25rem}
-    footer{color:var(--muted);font-size:.9rem;text-align:center;padding:1rem 0}
-    code{background:#f3f4f6;padding:.1rem .35rem;border-radius:4px;font-family:ui-monospace, SFMono-Regular, Menlo, Monaco, "Roboto Mono", monospace}
-    ul{margin-top:.5rem}
+    :root {
+      --bg-light: #fff8f0;
+      --bg-dark: #121212;
+      --text-light: #2c2c2c;
+      --text-dark: #f5f5f5;
+      --card-light: #ffffff;
+      --card-dark: #1f1f1f;
+      --accent: #ff9800;
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: var(--bg-light);
+      color: var(--text-light);
+      transition: background 0.4s, color 0.4s;
+      overflow-x: hidden;
+    }
+
+    body.dark {
+      background: var(--bg-dark);
+      color: var(--text-dark);
+    }
+
+    /* Fondo animado hamburguesas */
+    .burgers {
+      position: fixed;
+      inset: 0;
+      z-index: -1;
+      overflow: hidden;
+    }
+
+    .burger {
+      position: absolute;
+      font-size: 40px;
+      animation: float 20s linear infinite;
+      opacity: 0.25;
+    }
+
+    @keyframes float {
+      from {
+        transform: translateY(110vh) rotate(0deg);
+      }
+      to {
+        transform: translateY(-120vh) rotate(360deg);
+      }
+    }
+
+    header {
+      text-align: center;
+      padding: 2rem 1rem;
+    }
+
+    header h1 {
+      font-size: clamp(1.8rem, 5vw, 3rem);
+    }
+
+    header p {
+      max-width: 700px;
+      margin: auto;
+      font-size: 1.1rem;
+      line-height: 1.6;
+    }
+
+    .toggle {
+      position: fixed;
+      top: 15px;
+      right: 15px;
+      background: var(--accent);
+      color: #fff;
+      border: none;
+      border-radius: 25px;
+      padding: 10px 16px;
+      cursor: pointer;
+      font-weight: bold;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: auto;
+      padding: 1rem;
+    }
+
+    .card {
+      background: var(--card-light);
+      border-radius: 16px;
+      padding: 1.5rem;
+      margin-bottom: 1.5rem;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+      transition: background 0.4s;
+    }
+
+    body.dark .card {
+      background: var(--card-dark);
+    }
+
+    .card h2 {
+      margin-top: 0;
+      color: var(--accent);
+    }
+
+    .question {
+      margin-bottom: 1rem;
+    }
+
+    .question label {
+      font-weight: bold;
+      display: block;
+      margin-bottom: 0.3rem;
+    }
+
+    .question textarea {
+      width: 100%;
+      min-height: 60px;
+      border-radius: 10px;
+      border: 1px solid #ccc;
+      padding: 0.6rem;
+      font-size: 1rem;
+      resize: vertical;
+    }
+
+    button.send {
+      width: 100%;
+      padding: 1rem;
+      font-size: 1.1rem;
+      border: none;
+      border-radius: 14px;
+      background: var(--accent);
+      color: white;
+      font-weight: bold;
+      cursor: pointer;
+      margin-bottom: 2rem;
+    }
+
+    footer {
+      text-align: center;
+      padding-bottom: 2rem;
+      font-size: 0.9rem;
+      opacity: 0.8;
+    }
   </style>
 </head>
+
 <body>
+
+  <!-- Fondo hamburguesas -->
+  <div class="burgers">
+    <div class="burger" style="left:5%; animation-duration:18s;">🍔</div>
+    <div class="burger" style="left:20%; animation-duration:22s;">🍟</div>
+    <div class="burger" style="left:40%; animation-duration:25s;">🍔</div>
+    <div class="burger" style="left:60%; animation-duration:20s;">🥤</div>
+    <div class="burger" style="left:80%; animation-duration:23s;">🍔</div>
+  </div>
+
+  <button class="toggle" onclick="toggleDark()">🌙 Modo nocturno</button>
+
   <header>
-    <h1>Para Fernanda Vargas</h1>
-    <p>Bienvenid@ — este es el archivo <code>index.html</code> inicial del proyecto.</p>
+    <h1>🍔 Una historia curiosamente deliciosa ❤️</h1>
+    <p>
+      Todo comenzó en Facebook… Un simple estado comiendo con papá en Burger King 🍟  
+      y casi a la misma hora, casi en el mismo lugar, casi en el mismo asiento,  
+      con el Cristo de la Concordia observándolo todo desde el fondo 🙏.  
+      <br><br>
+      Fernanda, estudiante de medicina, de buen diente y excelente gusto 🍔🎬  
+      y Fabricio, un humilde ingeniero de sistemas, curioso por conocerte más 💻❤️.  
+      Entre mensajes, risas y charlas divertidas, algo bonito empezó a crecer.
+    </p>
   </header>
 
   <main class="container">
-    <section>
-      <h2>Descripción</h2>
-      <p>Este repositorio contiene recursos y material para Fernanda Vargas. Edita este archivo para comenzar.</p>
-    </section>
+    <div class="card">
+      <h2>💬 Cosas que me encantaría saber de ti</h2>
 
-    <section>
-      <h2>Próximos pasos</h2>
-      <ul>
-        <li>Añadir estilos en <code>styles.css</code> o usar un framework (Tailwind, Bootstrap, etc.).</li>
-        <li>Crear páginas adicionales (<code>about.html</code>, <code>contact.html</code>).</li>
-        <li>Subir imágenes a la carpeta <code>assets/</code> y referenciarlas desde aquí.</li>
-      </ul>
-    </section>
+      <!-- Preguntas -->
+      <div class="question"><label>1️⃣ ¿Cuál es tu comida favorita y por qué?</label><textarea></textarea></div>
+      <div class="question"><label>2️⃣ ¿Burger King o McDonald's? 🍔😏</label><textarea></textarea></div>
+      <div class="question"><label>3️⃣ Película de terror favorita 👻</label><textarea></textarea></div>
+      <div class="question"><label>4️⃣ ¿Prefieres viajar sola o acompañada?</label><textarea></textarea></div>
+      <div class="question"><label>5️⃣ ¿Qué país sueñas conocer?</label><textarea></textarea></div>
+      <div class="question"><label>6️⃣ ¿Qué te hace reír sin esfuerzo?</label><textarea></textarea></div>
+      <div class="question"><label>7️⃣ ¿Eres más estratégica o impulsiva?</label><textarea></textarea></div>
+      <div class="question"><label>8️⃣ ¿Una película que podrías ver mil veces?</label><textarea></textarea></div>
+      <div class="question"><label>9️⃣ ¿Qué valoras más en una persona?</label><textarea></textarea></div>
+      <div class="question"><label>🔟 ¿Qué te atrajo de mí? 😳</label><textarea></textarea></div>
+
+      <div class="question"><label>1️⃣1️⃣ ¿Qué te enamora de la vida?</label><textarea></textarea></div>
+      <div class="question"><label>1️⃣2️⃣ ¿Eres de dulces o salados?</label><textarea></textarea></div>
+      <div class="question"><label>1️⃣3️⃣ ¿Qué superpoder te gustaría tener?</label><textarea></textarea></div>
+      <div class="question"><label>1️⃣4️⃣ ¿Plan perfecto para un día libre?</label><textarea></textarea></div>
+      <div class="question"><label>1️⃣5️⃣ ¿Algo que pocos saben de ti?</label><textarea></textarea></div>
+      <div class="question"><label>1️⃣6️⃣ ¿Qué te hace sentir segura?</label><textarea></textarea></div>
+      <div class="question"><label>1️⃣7️⃣ ¿Cuál es tu mayor sueño?</label><textarea></textarea></div>
+      <div class="question"><label>1️⃣8️⃣ ¿Qué te conquista primero?</label><textarea></textarea></div>
+      <div class="question"><label>1️⃣9️⃣ ¿Un miedo curioso que tengas?</label><textarea></textarea></div>
+      <div class="question"><label>2️⃣0️⃣ ¿Qué esperas de alguien que quiere conocerte de verdad?</label><textarea></textarea></div>
+
+      <div class="question">
+        <label>✨ Cuéntame algo muy interesante, curioso o divertido sobre ti ✨</label>
+        <textarea placeholder="Aquí puedes escribir lo que tú quieras… 💕"></textarea>
+      </div>
+    </div>
+
+    <button class="send" onclick="sendMessenger()">
+      📩 ¿Enviamos todo esto por Messenger? 😏❤️
+    </button>
   </main>
 
   <footer>
-    <small>Creado el 2025-12-23 — fabricioplay2learn-ctrl</small>
+    Hecho con cariño por Fabricio 💻❤️🍔
   </footer>
+
+  <script>
+    function toggleDark() {
+      document.body.classList.toggle('dark');
+    }
+
+    function sendMessenger() {
+      const ok = confirm(
+        "😳 ¿Estás segura de enviar todas tus respuestas por Messenger?\n\nPrometo leerlas con una sonrisa 🍔❤️"
+      );
+      if (ok) {
+        alert("📨 Perfecto… ahora solo falta que me las envíes 😉");
+      }
+    }
+  </script>
+
 </body>
 </html>
