@@ -45,13 +45,13 @@
     .burger {
       position: absolute;
       font-size: 42px;
-      animation: float 22s linear infinite;
+      animation: float 12s linear infinite;
       opacity: 0.25;
     }
 
     @keyframes float {
-      from { transform: translateY(110vh) rotate(0deg); }
-      to { transform: translateY(-120vh) rotate(360deg); }
+      from { transform: translateY(125vh) rotate(0deg); }
+      to { transform: translateY(-150vh) rotate(360deg); }
     }
 
     header {
@@ -126,6 +126,8 @@ body.dark .story-box {
     }
 
     .card {
+      width: 100%;
+      
       background: var(--card-light);
       border-radius: 20px;
       padding: 2rem;
@@ -133,19 +135,24 @@ body.dark .story-box {
       box-shadow: 0 12px 30px rgba(0,0,0,0.12);
       transition: background 0.4s;
 
-      background: rgba(255, 255, 255, 0.55); /* Transparencia */
-      backdrop-filter: blur(12px);
-      -webkit-backdrop-filter: blur(12px);
-      box-shadow: 0 18px 40px rgba(0,0,0,0.15);
+      background: rgba(255, 255, 255, 0.25); /* Transparencia */
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      
       text-align: center;
-      border: 1px solid rgba(255, 255, 255, 0.35);
-
+      
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      box-shadow: 0 18px 40px rgba(0,0,0,0.12);
+      
+      transition: background 0.4s ease, box-shadow 0.4s ease;
     }
 
         /* Modo oscuro */
     body.dark .card {
-      background: rgba(30, 30, 30, 0.6);
-    }
+  background: rgba(30, 30, 30, 0.45);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
     
     
 
@@ -161,6 +168,7 @@ body.dark .story-box {
       padding: 1.2rem;
       border-radius: 16px;
       margin-bottom: 1.2rem;
+      text-align: center;
     }
 
     body.dark .question {
@@ -180,7 +188,7 @@ body.dark .story-box {
     }
 
     textarea {
-      width: 100%;
+      margin: 0 auto 0.6rem; /* centra horizontalmente */
       border-radius: 12px;
       border: 1px solid #ccc;
       padding: 0.7rem;
@@ -237,6 +245,18 @@ body.dark .story-box {
   <div class="burger" style="left:25%; animation-duration:25s;">🍟</div>
   <div class="burger" style="left:50%; animation-duration:20s;">🍔</div>
   <div class="burger" style="left:75%; animation-duration:28s;">🥤</div>
+  <div class="burger" style="left:5%;">🍔</div>
+  <div class="burger" style="left:12%; animation-duration:10s;">🍟</div>
+  <div class="burger" style="left:20%; animation-duration:14s;">🍔</div>
+  <div class="burger" style="left:28%; animation-duration:11s;">🥤</div>
+  <div class="burger" style="left:36%; animation-duration:13s;">🍔</div>
+  <div class="burger" style="left:44%; animation-duration:9s;">🍟</div>
+  <div class="burger" style="left:52%; animation-duration:15s;">🍔</div>
+  <div class="burger" style="left:60%; animation-duration:10s;">🥤</div>
+  <div class="burger" style="left:68%; animation-duration:12s;">🍔</div>
+  <div class="burger" style="left:76%; animation-duration:14s;">🍟</div>
+  <div class="burger" style="left:84%; animation-duration:11s;">🍔</div>
+  <div class="burger" style="left:92%; animation-duration:9s;">🥤</div>
 </div>
 
 <button class="toggle" onclick="toggleDark()">🌙 Modo nocturno</button>
@@ -267,7 +287,7 @@ body.dark .story-box {
 
 <main class="container">
   <div class="card">
-    <h2>💬 Preguntas que nacen de la curiosidad (es tu culpa)</h2>
+    <h2>💬 Preguntas que nacen de la curiosidad (Es tu culpa ☺️)</h2>
 
     <div class="question">
       <div class="question-title">🍔 ¿Cuál es tu comida favorita?</div>
