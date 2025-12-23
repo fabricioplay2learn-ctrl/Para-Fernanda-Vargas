@@ -54,22 +54,6 @@
       to { transform: translateY(-120vh) rotate(360deg); }
     }
 
-    header {
-      text-align: center;
-      padding: 2.5rem 1rem;
-    }
-
-    header h1 {
-      font-size: clamp(2rem, 5vw, 3.2rem);
-    }
-
-    header p {
-      max-width: 760px;
-      margin: auto;
-      font-size: 1.15rem;
-      line-height: 1.7;
-    }
-
     .toggle {
       position: fixed;
       top: 15px;
@@ -84,6 +68,38 @@
       z-index: 10;
     }
 
+    /* Historia */
+    .story-box {
+      max-width: 820px;
+      margin: 3rem auto 2rem;
+      padding: 2.5rem 2rem;
+      border-radius: 26px;
+      background: linear-gradient(135deg, #fff6e8, #ffffff);
+      box-shadow: 0 18px 40px rgba(0,0,0,0.15);
+      text-align: center;
+    }
+
+    body.dark .story-box {
+      background: linear-gradient(135deg, #1f1f1f, #2a2a2a);
+    }
+
+    .story-box h1 {
+      font-size: clamp(2rem, 5vw, 3.2rem);
+      margin-bottom: 1.4rem;
+    }
+
+    .story-content p {
+      font-size: 1.1rem;
+      line-height: 1.8;
+      margin-bottom: 1.3rem;
+    }
+
+    .story-intro {
+      font-style: italic;
+      font-weight: 600;
+      color: var(--accent);
+    }
+
     .container {
       max-width: 900px;
       margin: auto;
@@ -96,7 +112,6 @@
       padding: 2rem;
       margin-bottom: 2rem;
       box-shadow: 0 12px 30px rgba(0,0,0,0.12);
-      transition: background 0.4s;
     }
 
     body.dark .card {
@@ -109,7 +124,6 @@
       font-size: 1.7rem;
     }
 
-    /* Preguntas bonitas */
     .question {
       background: var(--soft);
       padding: 1.2rem;
@@ -123,8 +137,7 @@
 
     .question-title {
       font-weight: 700;
-      font-size: 1.05rem;
-      margin-bottom: 0.4rem;
+      margin-bottom: 0.3rem;
     }
 
     .question-sub {
@@ -139,8 +152,6 @@
       border: 1px solid #ccc;
       padding: 0.7rem;
       font-family: 'Nunito', sans-serif;
-      font-size: 1rem;
-      resize: vertical;
       margin-bottom: 0.5rem;
     }
 
@@ -177,7 +188,7 @@
         background: white;
         color: black;
       }
-      .card {
+      .card, .story-box {
         box-shadow: none;
       }
     }
@@ -185,7 +196,29 @@
 </head>
 
 <body>
+<button class="send" onclick="sendMessenger()">
+    🖨️ ¿Quieres imprimir esta historia como recuerdo?
+  </button>
+</main>
 
+<footer>
+  Hecho con cariño por Fabricio 💻❤️🍔
+</footer>
+
+<script>
+  function toggleDark() {
+    document.body.classList.toggle('dark');
+  }
+
+  function sendMessenger() {
+    const ok = confirm(
+      "🖨️ ¿Te gustaría imprimir esta historia y guardarla como un recuerdo bonito?"
+    );
+    if (ok) {
+      setTimeout(() => window.print(), 300);
+    }
+  }
+</script>
 <div class="burgers">
   <div class="burger" style="left:5%;">🍔</div>
   <div class="burger" style="left:25%; animation-duration:25s;">🍟</div>
@@ -195,18 +228,29 @@
 
 <button class="toggle" onclick="toggleDark()">🌙 Modo nocturno</button>
 
-<header>
-    <h1>🍔 Una historia curiosamente deliciosa ❤️</h1>
-    <p>
-      Todo empezó con un estado en Facebook… Ella comiendo con papá en Burger King 🍟  
-      y casi a la misma hora, casi en el mismo lugar, incluso en el mismo asiento,  
-      con una vista privilegiada hacía el Cristo de la Concordia, observándolo todo.  
-      <br><br>
-      Fernanda, estudiante de medicina, una mujer de buen diente y excelentes gustos 🍔🎬  
-      y Fabricio, un humilde espíritu aventurero, curioso por conocer más sobre ella 💻❤️.  
-      Entre mensajes, risas y charlas divertidas, algo bonito empezó a crecer.
+<header class="story-box">
+  <h1>🍔 Una historia curiosamente deliciosa ❤️</h1>
+  <div class="story-content">
+    <p class="story-intro">
+      Una coincidencia, una hamburguesa y una historia que empezó sin avisar…
     </p>
-  </header>
+    <p>
+      Todo empezó con un estado en Facebook.  
+      Fernanda, comiendo con su papá en Burger King 🍟,  
+      casi a la misma hora, casi en el mismo lugar, incluso en el mismo asiento,  
+      con el Cristo de la Concordia observándolo todo desde lo alto.
+    </p>
+    <p>
+      Ella, estudiante de medicina, de buen diente y excelentes gustos 🍔🎬.  
+      Él, Fabricio, un espíritu aventurero y curioso,  
+      con ganas sinceras de conocer más sobre ella 💻❤️.
+    </p>
+    <p>
+      Entre mensajes, risas y charlas que se volvieron costumbre,  
+      algo bonito —y muy especial— empezó a crecer.
+    </p>
+  </div>
+</header>
 
 <main class="container">
   <div class="card">
@@ -216,58 +260,29 @@
       <div class="question-title">🍔 ¿Cuál es tu comida favorita?</div>
       <div class="question-sub">¿Por qué te gusta tanto?</div>
       <textarea></textarea>
-      <textarea class="small" placeholder="¿Por qué?"></textarea>
+      <textarea class="small"></textarea>
     </div>
 
     <div class="question">
-      <div class="question-title">🎬 ¿Cuál te atrapa más y por qué?</div>
-      <div class="question-sub">Me comentaste que eres más de películas</div>
+      <div class="question-title">🎬 ¿Películas o series?</div>
+      <div class="question-sub">¿Por qué te atraen más?</div>
       <textarea></textarea>
-      <textarea class="small" placeholder="¿Por qué esa película?"></textarea>
+      <textarea class="small"></textarea>
     </div>
 
     <div class="question">
-      <div class="question-title">👻 ¿Película de terror favorita</div>
-      <div class="question-sub">Y puedes verla sin miedo?</div>
+      <div class="question-title">✈️ ¿Te gusta viajar?</div>
+      <div class="question-sub">¿A dónde irías ahora mismo?</div>
       <textarea></textarea>
-      <textarea class="small" placeholder="¿Cuántas veces más?"></textarea>
-    </div>
-
-    <div class="question">
-      <div class="question-title">✈️ ¿Te gusta viajar mucho?</div>
-      <div class="question-sub">Y, ¿a dónde irías ahora mismo?</div>
-      <textarea></textarea>
-      <textarea class="small" placeholder="Tienes algún destino soñado…?"></textarea>
-    </div>
-
-    <div class="question">
-      <div class="question-title">🧠 ¿Te consideras estratega?</div>
-      <div class="question-sub">Cómo sabras que ya me diste miedo ¿En qué situaciones lo notas más?</div>
-      <textarea></textarea>
-      <textarea class="small" placeholder="Cuéntame un ejemplo para estar mentalmente preparado jajaja"></textarea>
-    </div>
-
-    <div class="question">
-      <div class="question-title">❤️ ¿Qué te atrae de una persona?</div>
-      <div class="question-sub">¿Y qué es lo que te aleja inmediatamente?</div>
-      <textarea></textarea>
-      <textarea class="small" placeholder="Lo que no te gusta… y si tienes la paciencia para que todo mejore"></textarea>
+      <textarea class="small"></textarea>
     </div>
 
     <div class="question">
       <div class="question-title">😳 ¿Qué te llamó la atención de mí?</div>
-      <div class="question-sub">Sé sincera… prometo sonreír jajaja</div>
+      <div class="question-sub">Prometo sonreír al leerlo</div>
       <textarea></textarea>
-      <textarea class="small" placeholder="Un detalle… quizá algo lindo que consideras, cómo el 'detalle'."></textarea>
+      <textarea class="small"></textarea>
     </div>
-
-    <div class="question">
-      <div class="question-title">✨ Cuéntame algo muy interesante, curioso o divertido sobre ti</div>
-      <div class="question-sub">Algo que pocos saben (Pero, si mataste a alguien prometo no delatarte)</div>
-      <textarea></textarea>
-      <textarea class="small" placeholder="Aquí puedes escribir lo que tú quieras… 💕"></textarea>
-    </div>
-
   </div>
 
   <button class="send" onclick="sendMessenger()">
