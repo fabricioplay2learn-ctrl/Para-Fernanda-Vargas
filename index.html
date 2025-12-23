@@ -83,7 +83,37 @@
       font-weight: 700;
       z-index: 10;
     }
+    /* Historia */
+    .story-box {
+      max-width: 820px;
+      margin: 3rem auto 2rem;
+      padding: 2.5rem 2rem;
+      border-radius: 26px;
+      background: linear-gradient(135deg, #fff6e8, #ffffff);
+      box-shadow: 0 18px 40px rgba(0,0,0,0.15);
+      text-align: center;
+    }
 
+    body.dark .story-box {
+      background: linear-gradient(135deg, #1f1f1f, #2a2a2a);
+    }
+
+    .story-box h1 {
+      font-size: clamp(2rem, 5vw, 3.2rem);
+      margin-bottom: 1.4rem;
+    }
+
+    .story-content p {
+      font-size: 1.1rem;
+      line-height: 1.8;
+      margin-bottom: 1.3rem;
+    }
+
+    .story-intro {
+      font-style: italic;
+      font-weight: 600;
+      color: var(--accent);
+    }
     .container {
       max-width: 900px;
       margin: auto;
@@ -195,18 +225,29 @@
 
 <button class="toggle" onclick="toggleDark()">🌙 Modo nocturno</button>
 
-<header>
-    <h1>🍔 Una historia curiosamente deliciosa ❤️</h1>
-    <p>
-      Todo empezó con un estado en Facebook… Ella comiendo con papá en Burger King 🍟  
-      y casi a la misma hora, casi en el mismo lugar, incluso en el mismo asiento,  
-      con una vista privilegiada hacía el Cristo de la Concordia, observándolo todo.  
-      <br><br>
-      Fernanda, estudiante de medicina, una mujer de buen diente y excelentes gustos 🍔🎬  
-      y Fabricio, un humilde espíritu aventurero, curioso por conocer más sobre ella 💻❤️.  
-      Entre mensajes, risas y charlas divertidas, algo bonito empezó a crecer.
+<header class="story-box">
+  <h1>🍔 Una historia curiosamente deliciosa ❤️</h1>
+  <div class="story-content">
+    <p class="story-intro">
+      Una coincidencia, una hamburguesa y una historia que empezó sin avisar…
     </p>
-  </header>
+    <p>
+      Todo empezó con un estado en Facebook.  
+      Fernanda, comiendo con su papá en Burger King 🍟,  
+      casi a la misma hora, casi en el mismo lugar, incluso en el mismo asiento,  
+      con el Cristo de la Concordia observándolo todo desde lo alto.
+    </p>
+    <p>
+      Ella, estudiante de medicina, de buen diente y excelentes gustos 🍔🎬.  
+      Él, Fabricio, un espíritu aventurero y curioso,  
+      con ganas sinceras de conocer más sobre ella 💻❤️.
+    </p>
+    <p>
+      Entre mensajes, risas y charlas que se volvieron costumbre,  
+      algo bonito —y muy especial— empezó a crecer.
+    </p>
+  </div>
+</header>
 
 <main class="container">
   <div class="card">
