@@ -83,20 +83,25 @@
       font-weight: 700;
       z-index: 10;
     }
-    /* Historia */
-    .story-box {
-      max-width: 900px;
-      margin: auto;
-      padding: 2.5rem 2rem;
-      border-radius: 26px;
-      background: linear-gradient(135deg, #fff6e8, #ffffff);
-      box-shadow: 0 18px 40px rgba(0,0,0,0.15);
-      text-align: center;
-    }
+    /* Historia - transparente y centrada */
+.story-box {
+  width: min(92%, 900px);          /* Responsivo sin tocar bordes */
+  margin: 3rem auto;               /* Centrado horizontal + aire arriba/abajo */
+  padding: clamp(1.6rem, 4vw, 2.5rem);
+  border-radius: 26px;
 
-    body.dark .story-box {
-      background: linear-gradient(135deg, #1f1f1f, #2a2a2a);
-    }
+  background: rgba(255, 255, 255, 0.55); /* Transparencia */
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+
+  box-shadow: 0 18px 40px rgba(0,0,0,0.15);
+  text-align: center;
+}
+
+/* Modo oscuro */
+body.dark .story-box {
+  background: rgba(30, 30, 30, 0.6);
+}
 
     .story-box h1 {
       font-size: clamp(2rem, 5vw, 3.2rem);
