@@ -1,373 +1,378 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Fabricio & Fernanda 🍔</title>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Fabricio & Fernanda 🍔</title>
 
-  <!-- Fuente Nunito -->
-  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600;700&display=swap" rel="stylesheet">
+<!-- Fuente Nunito -->
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600;700&display=swap" rel="stylesheet">
 
-  <style>
-    :root {
-      --bg-light: #fff8f0;
-      --bg-dark: #121212;
-      --text-light: #2c2c2c;
-      --text-dark: #f5f5f5;
-      --card-light: #ffffff;
-      --card-dark: #1f1f1f;
-      --accent: #ff9800;
-      --soft: #ffefd6;
-    }
+<style>
+:root {
+--bg-light: #fff8f0;
+--bg-dark: #121212;
+--text-light: #2c2c2c;
+--text-dark: #f5f5f5;
+--card-light: #ffffff;
+--card-dark: #1f1f1f;
+--accent: #ff9800;
+--soft: #ffefd6;
+}
 
-    body {
-      margin: 0;
-      font-family: 'Nunito', sans-serif;
-      background: var(--bg-light);
-      color: var(--text-light);
-      transition: background 0.4s, color 0.4s;
-      overflow-x: hidden;
-    }
+body {
+margin: 0;
+font-family: 'Nunito', sans-serif;
+background: var(--bg-light);
+color: var(--text-light);
+transition: background 0.4s, color 0.4s;
+overflow-x: hidden;
+}
 
-    body.dark {
-      background: var(--bg-dark);
-      color: var(--text-dark);
-    }
+body.dark {
+background: var(--bg-dark);
+color: var(--text-dark);
+}
 
-    /* Fondo hamburguesas */
-    .burgers {
-      position: fixed;
-      inset: 0;
-      z-index: -1;
-      overflow: hidden;
-    }
+/* Fondo hamburguesas */
+.burgers {
+position: fixed;
+inset: 0;
+z-index: -1;
+overflow: hidden;
+}
 
-    .burger {
-      position: absolute;
-      font-size: 42px;
-      animation: float 22s linear infinite;
-      opacity: 0.25;
-    }
+.burger {
+position: absolute;
+font-size: 42px;
+animation: float 12s linear infinite;
+opacity: 0.25;
+}
 
-    @keyframes float {
-      from { transform: translateY(110vh) rotate(0deg); }
-      to { transform: translateY(-120vh) rotate(360deg); }
-    }
+@keyframes float {
+from { transform: translateY(125vh) rotate(0deg); }
+to { transform: translateY(-150vh) rotate(360deg); }
+}
 
-    header {
-      text-align: center;
-      padding: 2.5rem 1rem;
-    }
+header {
+text-align: center;
+padding: 2.5rem 1rem;
+}
 
-    header h1 {
-      font-size: clamp(2rem, 5vw, 3.2rem);
-    }
+header h1 {
+font-size: clamp(2rem, 5vw, 3.2rem);
+}
 
-    header p {
-      max-width: 760px;
-      margin: auto;
-      font-size: 1.15rem;
-      line-height: 1.7;
-    }
+header p {
+max-width: 760px;
+margin: auto;
+font-size: 1.15rem;
+line-height: 1.7;
+}
 
-    .toggle {
-      position: fixed;
-      top: 15px;
-      right: 15px;
-      background: var(--accent);
-      color: #fff;
-      border: none;
-      border-radius: 30px;
-      padding: 10px 18px;
-      cursor: pointer;
-      font-weight: 700;
-      z-index: 10;
-    }
-    /* Historia - transparente y centrada */
+.toggle {
+position: fixed;
+top: 15px;
+right: 15px;
+background: var(--accent);
+color: #fff;
+border: none;
+border-radius: 30px;
+padding: 10px 18px;
+cursor: pointer;
+font-weight: 700;
+z-index: 10;
+}
+/* Historia - transparente y centrada */
 .story-box {
-  width: min(92%, 900px);          /* Responsivo sin tocar bordes */
-  margin: 3rem auto;               /* Centrado horizontal + aire arriba/abajo */
-  padding: clamp(1.6rem, 4vw, 2.5rem);
-  border-radius: 26px;
+width: min(92%, 900px);          /* Responsivo sin tocar bordes */
+margin: 3rem auto;               /* Centrado horizontal + aire arriba/abajo */
+padding: clamp(1.6rem, 4vw, 2.5rem);
+border-radius: 26px;
 
-  background: rgba(255, 255, 255, 0.55); /* Transparencia */
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
+background: rgba(255, 255, 255, 0.55); /* Transparencia */
+backdrop-filter: blur(12px);
+-webkit-backdrop-filter: blur(12px);
 
-  box-shadow: 0 18px 40px rgba(0,0,0,0.15);
-  text-align: center;
+box-shadow: 0 18px 40px rgba(0,0,0,0.15);
+text-align: center;
 }
 
 /* Modo oscuro */
 body.dark .story-box {
-  background: rgba(30, 30, 30, 0.6);
+background: rgba(30, 30, 30, 0.6);
 }
 
-    .story-box h1 {
-      font-size: clamp(2rem, 5vw, 3.2rem);
-      margin-bottom: 1.4rem;
-    }
-
-    .story-content p {
-      font-size: 1.1rem;
-      line-height: 1.8;
-      margin-bottom: 1.3rem;
-    }
-
-    .story-intro {
-      font-style: italic;
-      font-weight: 600;
-      color: var(--accent);
-    }
-    .container {
-      max-width: 900px;
-      margin: auto;
-      padding: 1rem;
-    }
-
-    .card {
-      width: 100%;
-      
-      background: var(--card-light);
-      border-radius: 20px;
-      padding: 2rem;
-      margin-bottom: 2rem;
-      box-shadow: 0 12px 30px rgba(0,0,0,0.12);
-      transition: background 0.4s;
-
-      background: rgba(255, 255, 255, 0.25); /* Transparencia */
-      backdrop-filter: blur(14px);
-      -webkit-backdrop-filter: blur(14px);
-      
-      text-align: center;
-      
-      border: 1px solid rgba(255, 255, 255, 0.15);
-      box-shadow: 0 18px 40px rgba(0,0,0,0.12);
-      
-      transition: background 0.4s ease, box-shadow 0.4s ease;
-    }
-
-        /* Modo oscuro */
-    body.dark .card {
-  background: rgba(30, 30, 30, 0.45);
-  border: 1px solid rgba(255, 255, 255, 0.08);
+.story-box h1 {
+font-size: clamp(2rem, 5vw, 3.2rem);
+margin-bottom: 1.4rem;
 }
 
-    
-    
+.story-content p {
+font-size: 1.1rem;
+line-height: 1.8;
+margin-bottom: 1.3rem;
+}
 
-    .card h2 {
-      margin-top: 0;
-      color: var(--accent);
-      font-size: 1.7rem;
-    }
+.story-intro {
+font-style: italic;
+font-weight: 600;
+color: var(--accent);
+}
+.container {
+max-width: 900px;
+margin: auto;
+padding: 1rem;
+}
 
-    /* Preguntas bonitas */
-    .question {
-      background: var(--soft);
-      padding: 1.2rem;
-      border-radius: 16px;
-      margin-bottom: 1.2rem;
-    }
+.card {
+width: 100%;
 
-    body.dark .question {
-      background: #2a2a2a;
-    }
+background: var(--card-light);
+border-radius: 20px;
+padding: 2rem;
+margin-bottom: 2rem;
+box-shadow: 0 12px 30px rgba(0,0,0,0.12);
+transition: background 0.4s;
 
-    .question-title {
-      font-weight: 700;
-      font-size: 1.05rem;
-      margin-bottom: 0.4rem;
-    }
+background: rgba(255, 255, 255, 0.25); /* Transparencia */
+backdrop-filter: blur(14px);
+-webkit-backdrop-filter: blur(14px);
 
-    .question-sub {
-      font-size: 0.95rem;
-      opacity: 0.8;
-      margin-bottom: 0.5rem;
-    }
+text-align: center;
 
-    textarea {
-      width: 100%;
-      border-radius: 12px;
-      border: 1px solid #ccc;
-      padding: 0.7rem;
-      font-family: 'Nunito', sans-serif;
-      font-size: 1rem;
-      resize: vertical;
-      margin-bottom: 0.5rem;
-    }
+border: 1px solid rgba(255, 255, 255, 0.15);
+box-shadow: 0 18px 40px rgba(0,0,0,0.12);
 
-    textarea.small {
-      min-height: 40px;
-      font-size: 0.95rem;
-    }
+transition: background 0.4s ease, box-shadow 0.4s ease;
+}
 
-    button.send {
-      width: 100%;
-      padding: 1.2rem;
-      font-size: 1.15rem;
-      border: none;
-      border-radius: 18px;
-      background: var(--accent);
-      color: white;
-      font-weight: 700;
-      cursor: pointer;
-      margin-bottom: 2rem;
-    }
+/* Modo oscuro */
+body.dark .card {
+background: rgba(30, 30, 30, 0.45);
+border: 1px solid rgba(255, 255, 255, 0.08);
+}
 
-    footer {
+
+
+
+.card h2 {
+margin-top: 0;
+color: var(--accent);
+font-size: 1.7rem;
+}
+
+/* Preguntas bonitas */
+.question {
+background: var(--soft);
+padding: 1.2rem;
+border-radius: 16px;
+margin-bottom: 1.2rem;
       text-align: center;
-      padding-bottom: 2rem;
-      font-size: 0.95rem;
-      opacity: 0.8;
-    }
+}
 
-    @media print {
-      .toggle, .send {
-        display: none;
-      }
-      body {
-        background: white;
-        color: black;
-      }
-      .card {
-        box-shadow: none;
-      }
-    }
-  </style>
+body.dark .question {
+background: #2a2a2a;
+}
+
+.question-title {
+font-weight: 700;
+font-size: 1.05rem;
+margin-bottom: 0.4rem;
+}
+
+.question-sub {
+font-size: 0.95rem;
+opacity: 0.8;
+margin-bottom: 0.5rem;
+}
+
+textarea {
+width: 100%;
+border-radius: 12px;
+border: 1px solid #ccc;
+padding: 0.7rem;
+font-family: 'Nunito', sans-serif;
+font-size: 1rem;
+resize: vertical;
+margin-bottom: 0.5rem;
+}
+
+textarea.small {
+min-height: 40px;
+font-size: 0.95rem;
+}
+
+button.send {
+width: 100%;
+padding: 1.2rem;
+font-size: 1.15rem;
+border: none;
+border-radius: 18px;
+background: var(--accent);
+color: white;
+font-weight: 700;
+cursor: pointer;
+margin-bottom: 2rem;
+}
+
+footer {
+text-align: center;
+padding-bottom: 2rem;
+font-size: 0.95rem;
+opacity: 0.8;
+}
+
+@media print {
+.toggle, .send {
+display: none;
+}
+body {
+background: white;
+color: black;
+}
+.card {
+box-shadow: none;
+}
+}
+</style>
 </head>
 
 <body>
 
 <div class="burgers">
-  <div class="burger" style="left:5%;">🍔</div>
-  <div class="burger" style="left:12%; animation-duration:10s;">🍟</div>
-  <div class="burger" style="left:20%; animation-duration:14s;">🍔</div>
-  <div class="burger" style="left:28%; animation-duration:11s;">🥤</div>
-  <div class="burger" style="left:36%; animation-duration:13s;">🍔</div>
-  <div class="burger" style="left:44%; animation-duration:9s;">🍟</div>
-  <div class="burger" style="left:52%; animation-duration:15s;">🍔</div>
-  <div class="burger" style="left:60%; animation-duration:10s;">🥤</div>
-  <div class="burger" style="left:68%; animation-duration:12s;">🍔</div>
-  <div class="burger" style="left:76%; animation-duration:14s;">🍟</div>
-  <div class="burger" style="left:84%; animation-duration:11s;">🍔</div>
-  <div class="burger" style="left:92%; animation-duration:9s;">🥤</div>
+<div class="burger" style="left:5%;">🍔</div>
+<div class="burger" style="left:25%; animation-duration:25s;">🍟</div>
+<div class="burger" style="left:50%; animation-duration:20s;">🍔</div>
+<div class="burger" style="left:75%; animation-duration:28s;">🥤</div>
+<div class="burger" style="left:5%;">🍔</div>
+<div class="burger" style="left:12%; animation-duration:10s;">🍟</div>
+<div class="burger" style="left:20%; animation-duration:14s;">🍔</div>
+<div class="burger" style="left:28%; animation-duration:11s;">🥤</div>
+<div class="burger" style="left:36%; animation-duration:13s;">🍔</div>
+<div class="burger" style="left:44%; animation-duration:9s;">🍟</div>
+<div class="burger" style="left:52%; animation-duration:15s;">🍔</div>
+<div class="burger" style="left:60%; animation-duration:10s;">🥤</div>
+<div class="burger" style="left:68%; animation-duration:12s;">🍔</div>
+<div class="burger" style="left:76%; animation-duration:14s;">🍟</div>
+<div class="burger" style="left:84%; animation-duration:11s;">🍔</div>
+<div class="burger" style="left:92%; animation-duration:9s;">🥤</div>
 </div>
 
 <button class="toggle" onclick="toggleDark()">🌙 Modo nocturno</button>
 
 <header class="card">
-  <h1>🍔 Una historia curiosamente deliciosa 🍟</h1>
-  <div class="story-content">
-    <p class="story-intro">
-      Una coincidencia, una hamburguesa y una historia que empezó sin avisar…
-    </p>
-    <p>
-      Todo empezó con un estado en Facebook.  
-      Fernanda, comiendo con su papá en Burger King 🍟,  
-      casi a la misma hora, casi en el mismo lugar, incluso en el mismo asiento,  
-      con el Cristo de la Concordia observándolo todo desde lo alto.
-    </p>
-    <p>
-      Ella, estudiante de medicina, de buen diente y excelentes gustos 🍔🎬.  
-      Él, Fabricio, un espíritu aventurero y curioso,  
-      con ganas sinceras de conocer más sobre ella 💻❤️.
-    </p>
-    <p>
-      Entre mensajes, risas y charlas que se volvieron costumbre,  
-      algo bonito —y muy especial— empezó a crecer.
-    </p>
-  </div>
+<h1>🍔 Una historia curiosamente deliciosa 🍟</h1>
+<div class="story-content">
+<p class="story-intro">
+Una coincidencia, una hamburguesa y una historia que empezó sin avisar…
+</p>
+<p>
+Todo empezó con un estado en Facebook.  
+Fernanda, comiendo con su papá en Burger King 🍟,  
+casi a la misma hora, casi en el mismo lugar, incluso en el mismo asiento,  
+con el Cristo de la Concordia observándolo todo desde lo alto.
+</p>
+<p>
+Ella, estudiante de medicina, de buen diente y excelentes gustos 🍔🎬.  
+Él, Fabricio, un espíritu aventurero y curioso,  
+con ganas sinceras de conocer más sobre ella 💻❤️.
+</p>
+<p>
+Entre mensajes, risas y charlas que se volvieron costumbre,  
+algo bonito —y muy especial— empezó a crecer.
+</p>
+</div>
 </header>
 
 <main class="container">
-  <div class="card">
-    <h2>💬 Preguntas que nacen de la curiosidad (Es tu culpa ☺️)</h2>
+<div class="card">
+<h2>💬 Preguntas que nacen de la curiosidad (Es tu culpa ☺️)</h2>
 
-    <div class="question">
-      <div class="question-title">🍔 ¿Cuál es tu comida favorita?</div>
-      <div class="question-sub">¿Por qué te gusta tanto?</div>
-      <textarea></textarea>
-      <textarea class="small" placeholder="¿Por qué?"></textarea>
-    </div>
+<div class="question">
+<div class="question-title">🍔 ¿Cuál es tu comida favorita?</div>
+<div class="question-sub">¿Por qué te gusta tanto?</div>
+<textarea></textarea>
+<textarea class="small" placeholder="¿Por qué?"></textarea>
+</div>
 
-    <div class="question">
-      <div class="question-title">🎬 ¿Cuál te atrapa más y por qué?</div>
-      <div class="question-sub">Me comentaste que eres más de películas</div>
-      <textarea></textarea>
-      <textarea class="small" placeholder="¿Por qué esa película?"></textarea>
-    </div>
+<div class="question">
+<div class="question-title">🎬 ¿Cuál te atrapa más y por qué?</div>
+<div class="question-sub">Me comentaste que eres más de películas</div>
+<textarea></textarea>
+<textarea class="small" placeholder="¿Por qué esa película?"></textarea>
+</div>
 
-    <div class="question">
-      <div class="question-title">👻 ¿Película de terror favorita</div>
-      <div class="question-sub">Y puedes verla sin miedo?</div>
-      <textarea></textarea>
-      <textarea class="small" placeholder="¿Cuántas veces más?"></textarea>
-    </div>
+<div class="question">
+<div class="question-title">👻 ¿Película de terror favorita</div>
+<div class="question-sub">Y puedes verla sin miedo?</div>
+<textarea></textarea>
+<textarea class="small" placeholder="¿Cuántas veces más?"></textarea>
+</div>
 
-    <div class="question">
-      <div class="question-title">✈️ ¿Te gusta viajar mucho?</div>
-      <div class="question-sub">Y, ¿a dónde irías ahora mismo?</div>
-      <textarea></textarea>
-      <textarea class="small" placeholder="Tienes algún destino soñado…?"></textarea>
-    </div>
+<div class="question">
+<div class="question-title">✈️ ¿Te gusta viajar mucho?</div>
+<div class="question-sub">Y, ¿a dónde irías ahora mismo?</div>
+<textarea></textarea>
+<textarea class="small" placeholder="Tienes algún destino soñado…?"></textarea>
+</div>
 
-    <div class="question">
-      <div class="question-title">🧠 ¿Te consideras estratega?</div>
-      <div class="question-sub">Cómo sabras que ya me diste miedo ¿En qué situaciones lo notas más?</div>
-      <textarea></textarea>
-      <textarea class="small" placeholder="Cuéntame un ejemplo para estar mentalmente preparado jajaja"></textarea>
-    </div>
+<div class="question">
+<div class="question-title">🧠 ¿Te consideras estratega?</div>
+<div class="question-sub">Cómo sabras que ya me diste miedo ¿En qué situaciones lo notas más?</div>
+<textarea></textarea>
+<textarea class="small" placeholder="Cuéntame un ejemplo para estar mentalmente preparado jajaja"></textarea>
+</div>
 
-    <div class="question">
-      <div class="question-title">❤️ ¿Qué te atrae de una persona?</div>
-      <div class="question-sub">¿Y qué es lo que te aleja inmediatamente?</div>
-      <textarea></textarea>
-      <textarea class="small" placeholder="Lo que no te gusta… y si tienes la paciencia para que todo mejore"></textarea>
-    </div>
+<div class="question">
+<div class="question-title">❤️ ¿Qué te atrae de una persona?</div>
+<div class="question-sub">¿Y qué es lo que te aleja inmediatamente?</div>
+<textarea></textarea>
+<textarea class="small" placeholder="Lo que no te gusta… y si tienes la paciencia para que todo mejore"></textarea>
+</div>
 
-    <div class="question">
-      <div class="question-title">😳 ¿Qué te llamó la atención de mí?</div>
-      <div class="question-sub">Sé sincera… prometo sonreír jajaja</div>
-      <textarea></textarea>
-      <textarea class="small" placeholder="Un detalle… quizá algo lindo que consideras, cómo el 'detalle'."></textarea>
-    </div>
+<div class="question">
+<div class="question-title">😳 ¿Qué te llamó la atención de mí?</div>
+<div class="question-sub">Sé sincera… prometo sonreír jajaja</div>
+<textarea></textarea>
+<textarea class="small" placeholder="Un detalle… quizá algo lindo que consideras, cómo el 'detalle'."></textarea>
+</div>
 
-    <div class="question">
-      <div class="question-title">✨ Cuéntame algo muy interesante, curioso o divertido sobre ti</div>
-      <div class="question-sub">Algo que pocos saben (Pero, si mataste a alguien prometo no delatarte)</div>
-      <textarea></textarea>
-      <textarea class="small" placeholder="Aquí puedes escribir lo que tú quieras… 💕"></textarea>
-    </div>
+<div class="question">
+<div class="question-title">✨ Cuéntame algo muy interesante, curioso o divertido sobre ti</div>
+<div class="question-sub">Algo que pocos saben (Pero, si mataste a alguien prometo no delatarte)</div>
+<textarea></textarea>
+<textarea class="small" placeholder="Aquí puedes escribir lo que tú quieras… 💕"></textarea>
+</div>
 
-  </div>
+</div>
 
-  <button class="send" onclick="sendMessenger()">
-    📩 ¿Imprimimos y enviamos todo esto por Messenger? 😏❤️
-  </button>
+<button class="send" onclick="sendMessenger()">
+📩 ¿Imprimimos y enviamos todo esto por Messenger? 😏❤️
+</button>
 </main>
 
 <footer>
-  Hecho con mucho cariño y con poquito de café, por Fabricio 💻❤️🍔
+Hecho con mucho cariño y con poquito de café, por Fabricio 💻❤️🍔
 </footer>
 
 <script>
-  function toggleDark() {
-    document.body.classList.toggle('dark');
-  }
+function toggleDark() {
+document.body.classList.toggle('dark');
+}
 
-  function sendMessenger() {
-    const ok = confirm(
-      "😳 ¿Estás segura de enviar todas tus respuestas por Messenger?\n\nPrometo leerlas con una sonrisa 🍔❤️"
-    );
+function sendMessenger() {
+const ok = confirm(
+"😳 ¿Estás segura de enviar todas tus respuestas por Messenger?\n\nPrometo leerlas con una sonrisa 🍔❤️"
+);
 
-    if (ok) {
-      alert("📨 Perfecto… ahora solo falta que me las envíes 😉");
-      setTimeout(() => {
-        window.print();
-      }, 300);
-    }
-  }
+if (ok) {
+alert("📨 Perfecto… ahora solo falta que me las envíes 😉");
+setTimeout(() => {
+window.print();
+}, 300);
+}
+}
 </script>
 
 </body>
