@@ -231,6 +231,25 @@
       }
     }
   </script>
+  <script>
+  function toggleDark() {
+    document.body.classList.toggle('dark');
+  }
+
+  function sendMessenger() {
+    const ok = confirm(
+      "😳 ¿Estás segura de enviar todas tus respuestas por Messenger?\n\n💡 También podrás imprimir esta historia para guardarla como recuerdo 🍔❤️"
+    );
+
+    if (ok) {
+      // Pequeño delay para que el navegador no bloquee la acción
+      setTimeout(() => {
+        window.print();
+      }, 300);
+    }
+  }
+</script>
+
 
 </body>
 </html>
